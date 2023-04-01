@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ログインフォーム</title>
+	<style>
+		form {
+			background-color: #00d5ff;
+			font-size: 24px;
+			padding: 20px;
+			width: 400px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		input[type=text], input[type=password] {
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: none;
+			background-color: white;
+			border-radius: 4px;
+		}
+		
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<label for="username">ユーザー名:</label>
+		<input type="text" id="username" name="username"><br><br>
+		<label for="password">パスワード:</label>
+		<input type="password" id="password" name="password"><br><br>
+		<input type="submit" value="ログイン">
+	</form>
+	
+	<script>
+		document.querySelector('form').addEventListener('submit', function(event) {
+			event.preventDefault(); // フォームのデフォルトの送信をキャンセル
+			
+			const username = document.getElementById('username').value;
+			const password = document.getElementById('password').value;
+			
+			if (username === 'saitouke' && password === 'saitouke') {
+				window.location.href = 'https://sites.google.com/view/roguin-kanryou-nozomu/%E3%83%9B%E3%83%BC%E3%83%A0';
+			} else {
+				alert('ユーザー名またはパスワードが間違っています。');
+			}
+		});
+	</script>
+</body>
+</html>
