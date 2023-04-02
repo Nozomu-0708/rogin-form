@@ -1,47 +1,59 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
   <head>
+    <title>Login Form</title>
     <meta charset="UTF-8">
-    <title>ログインフォーム</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
         background-color: #00d5ff;
-        text-align: center;
+        font-size: 24px;
       }
       form {
-        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
       }
-      label {
-        font-size: 24px;
-      }
-      input[type="text"], input[type="password"] {
-        width: 90%;
-        height: 40px;
-        font-size: 24px;
-        margin-bottom: 20px;
-        padding: 5px;
+      input[type="text"],
+      input[type="password"] {
+        width: 200px; /* ここを調整する */
+        padding: 10px;
+        margin: 10px;
         border-radius: 5px;
         border: none;
       }
       input[type="submit"] {
-        width: 50%;
-        height: 50px;
-        font-size: 24px;
-        background-color: white;
+        padding: 10px;
+        margin: 10px;
         border-radius: 5px;
         border: none;
-        cursor: pointer;
+        background-color: white;
+        color: #00d5ff;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <h1>ログインしてください</h1>
-    <form action="https://sites.google.com/view/roguin-kanryou-nozomu/%E3%83%9B%E3%83%BC%E3%83%A0">
-      <label>ユーザー名:</label>
-      <input type="text" name="username"><br>
-      <label>パスワード:</label>
-      <input type="password" name="password"><br>
-      <input type="submit" value="ログイン">
+    <form action="#" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Log In">
     </form>
+    <script>
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.querySelector('#username').value;
+        const password = document.querySelector('#password').value;
+        if (username === 'saitouke' && password === 'saitouke') {
+          window.location.href = 'https://sites.google.com/view/roguin-kanryou-nozomu/%E3%83%9B%E3%83%BC%E3%83%A0';
+        } else {
+          alert('Invalid username or password. Please try again.');
+        }
+      });
+    </script>
   </body>
 </html>
